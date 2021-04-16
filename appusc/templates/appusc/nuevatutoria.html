@@ -1,0 +1,43 @@
+{% extends 'appusc/base.html' %}
+
+    {% block content %}
+        
+        <br>
+        
+        <br>
+        <style>
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 1px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+
+  border-radius: 4px;
+
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+
+        </style>
+     
+       <p>Formulario para inscripción de nuevas tutorías</p>
+
+       <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Inscribir Nueva Tutoría</button>
+      </form>
+      
+     {% endblock %}

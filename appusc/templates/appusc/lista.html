@@ -1,0 +1,223 @@
+{% extends 'appusc/base.html' %}
+{% load static %}      
+
+   {% block content %}
+        
+        
+        
+      
+        <link rel="stylesheet" href="{% static 'css/w3.css' %}">
+           <style>
+             
+            .card {
+                box-shadow: 1px 1px 1px 1px rgba(3, 83, 255, 0.2);
+                margin-left:0px;
+                margin-right: 20px;
+                transition: 0.3s;
+                width: 100%;
+                border-radius: 5px;
+                
+            }
+            
+            .cardcargue {
+                box-shadow: 8px 8px 1px 1px rgba(3, 83, 255, 0.2);
+                margin-left:0px;
+                margin-right: 20px;
+                transition: 0.3s;
+                width: 100%;
+                border-radius: 5px 1px;
+            }
+
+            .card:hover {
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            .otrocontainer{
+                padding: 1px 1px 1px 1px;
+                margin-left:10px;
+                margin-right:0px;
+
+            }
+            .container {
+                padding: 1px 1px 1px 1px;
+                margin-left:20px;
+                margin-right:10px;
+            }
+
+            .leftcontainerotrousuario {
+                padding: 2px 16px;
+                border-color: blueviolet;
+                box-shadow: 1px 1px 1px 1px rgba(7, 23, 241, 0.712);
+                margin-left:0px;
+                margin-right: 0px;
+                
+            }
+
+            .leftcontainer {
+                padding: 2px 16px;
+                box-shadow: 1px 1px 1px 1px rgba(7, 241, 163, 0.712);
+                margin-left:0px;
+                margin-right: 0px;
+            }
+            .leftcontainercargue{
+                padding: 2px 16px 15px;
+                box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.712);
+                margin-left:0px;
+                margin-right: 0px;
+            }
+
+            img {
+                border-radius: 5px 5px 0 0;
+                }
+            .tab1{padding-left: 4em;}
+
+
+            .containerb {
+            max-width: 820px;
+            margin: 0px auto;
+            margin-top: 50px;
+        }
+
+        .comment {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+
+        .commenter {
+            float: left;
+        }
+
+        .commenter img {
+            width: 35px;
+            height: 35px;
+        }
+
+        .comment-text-area {
+            float: left;
+            width: 100%;
+            height: auto;
+        }
+
+        .textinput {
+            float: left;
+            width: 100%;
+            min-height: 30px;
+            outline: none;
+            resize: none;
+            border: 1px solid grey;
+        }
+
+
+            </style>
+          
+
+            <h2>Historial del Trabajo de Grado</h2>
+            
+            <div class="cardcargue">
+              <div class="leftcontainercargue">
+                <form method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  {{ form.as_p }}
+                  <button type="submit">Crear nueva entrada</button>
+              </form>
+                
+              
+              
+              <!--<p style="text-align: center;">Realizar una nueva entrada al historial</p>
+                <form  method="post" enctype="multipart/form-data">
+                  {% csrf_token %}
+                  <label for="titulocomentario"style="text-align:left">Ingrese un título</label>
+                  <input type="text"name="titulocomentario" id="titulocomentario" placeholder="100 caracteres máximo" required="true" maxlength="100" size="105">
+                  
+                  <br>
+                  <label for="comentario"style="text-align:left">Ingrese un comentario</label>
+                  <textarea required="true" class="textinput"name="comentario" id="comentario" placeholder="300 caracteres máximo"cols="10" rows="2" maxlength="300"></textarea>
+                  <br>
+                  <input  style="margin-top: 10px;" type="file" name="document">
+                  <button type="submit">Guardar entrada</button>  
+                </form>-->
+              </div>
+            </div>
+            <br>
+          
+            <br>
+
+
+
+            <div>
+              {% for x in lista_post %}
+              <!--ojo con este condicional, costó mucho obtenerlo-->
+              {% if x.autor == request.user  %}
+
+
+
+                   
+              <div class="card" >
+
+                <div class="leftcontainer">
+                  <div class="w3-col m1 text-right">
+                    <img class="w3-circle"src="{% static 'images/jhonmasso.jpg' %}" style="width:50px;height:50px;margin:10px 10px">
+                    
+                  </div>
+                  
+                  <span class="w3-opacity w3-medium">{{ x.autor }} &nbsp;{{ x.fecha_pub }}</span>
+                  <p style= "margin:1px 1px"><b>Título : {{ x.titulo }} </b></p>
+                  <div class="otrocontainer" >     
+                    <button style=" background-color: rgb(0, 255, 179);">Archivos Adjuntos</button>                                
+                  </div>
+                  
+                </div>
+             
+                <div>
+                  
+                  <p>{{ x.texto }}</p>
+                </div>
+         
+              </div>
+
+
+              {% else %}
+         
+
+              
+              <div class="card" >
+
+                <div class="leftcontainerotrousuario">
+                  <div style="width:10%;height:50px;display:inline">
+                    <div style="width:10%;height:50px;display: inline;">
+                      <img class="w3-circle"src="{% static 'images/jhonmasso.jpg' %}"style="width:50px;height:50px;float: right;margin:10px 10px">
+                      
+                    </div>
+                  </div>
+                  
+                  <div>
+                  <p class="w3-opacity" style= "margin:1px 1px;text-align-last:right ;padding-left: 10px;width: 93%;">{{ x.autor }} &nbsp;{{ x.fecha_pub }}</p>
+                  <p style= "margin:1px 1px;text-align-last:right ;width: 93%;"><b>Título : {{ x.titulo }} </b></p>
+                  </div>
+                  <div class="otrocontainer" style="text-align-last: right;width: 92%;">   
+                     <button style=" background-color: rgb(0, 255, 179);">Archivos Adjuntos</button>                                               
+                  </div>
+                  
+                </div>
+             
+                <div >
+                  
+                  <p >{{ x.texto }}</p>
+                </div>
+         
+              </div>
+
+
+
+
+
+
+
+              {% endif %}
+              <br>
+              <br>
+
+            {% endfor %} 
+            </div>
+
+     {% endblock %}

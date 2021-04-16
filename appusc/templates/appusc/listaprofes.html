@@ -1,0 +1,30 @@
+{% extends 'appusc/base.html' %}
+
+    {% block content %}
+        
+        <br>
+        
+        <br>
+        <div class="w3-container">
+        <h5>Listado de Profesores</h5>
+       
+            <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
+                <th>Cédula</th>
+                <th>Nombres</th>
+                <th>Apellidos</th>
+                {% for registro in profes %}
+                <tr>
+                    <td>{{ registro.cedula }}</td>
+                    <td>{{ registro.nombres }}</td>
+                    <td>{{ registro.apellidos }}</td>
+                </tr>
+                {% endfor %}
+              
+            </table><br>
+            
+        </div>
+
+
+
+      
+     {% endblock %}

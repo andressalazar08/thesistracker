@@ -1,0 +1,29 @@
+{% extends 'appusc/base.html' %}
+
+    {% block content %}
+        
+        <br>
+        
+        <h2>vista para cargue de archivos        </h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="document">
+            <button type="submit">Cargar</button>
+            
+
+        
+        </form>
+
+        <br>
+      
+ 
+     
+
+            <p>{{ posteos.titulo }}</p>
+            <p>{{ posteos.fecha_pub }}</p>
+            <p>{{ posteos.trabajo_grado }}</p>
+
+        
+      
+     {% endblock %}

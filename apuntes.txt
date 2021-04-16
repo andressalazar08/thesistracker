@@ -1,0 +1,3 @@
+
+If you want to change the server’s port, pass it as a command-line argument. For instance, this command starts the server on port 8080:
+python manage.py runserver 8080

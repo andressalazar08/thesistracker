@@ -1,0 +1,33 @@
+{% extends 'appusc/base.html' %}
+
+    {% block content %}
+        
+        <br>
+        
+        <h2>vista para cargue de archivos        </h2>
+
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="document">
+            <button type="submit">Cargar</button>
+            
+
+        
+        </form>
+
+        <br>
+      
+ 
+        {% for x in object_list %}
+            <p>{{ x.titulo }}</p>
+            <p>{{ x.fecha_pub }}</p>
+            <p>{{ x.trabajo_grado }}</p>
+
+        {% endfor %}
+      
+
+        {% if url %}
+        <p>la ruta del archivo cargado es: <a href="{{ url }}"> click aqui</a></p>
+        {% endif %}
+
+     {% endblock %}
