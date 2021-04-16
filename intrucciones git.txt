@@ -1,0 +1,6 @@
+
+
+git status
+git add --all .
+git commit -m "Cambie el HTML para la página."
+git push
