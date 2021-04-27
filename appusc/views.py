@@ -22,19 +22,9 @@ from django.utils import timezone
 
 
 
-class post_view(ListView):
-    model=posteos
-    template_name='appusc/formularios.html'
-
-
-class tutoria_detalle(DetailView):
-    model=posteos
-    template_name='appusc/detalles_tutorias.html'
-
-
 # Create your views here.
 #Ojo esta vista tiene un primary key para controlar los comentarios que viene del template y del url
-def ultima(request,pk):
+def tgrados_historial_tm(request,pk):
     usuario_logueado=request.user.get_username()
     if request.method=='POST':
         #creo una variable para guardar el formulario que se renderiza en esta página desde .forms
@@ -56,7 +46,7 @@ def ultima(request,pk):
             lista_post=posteos.objects.filter(trabajo_grado_id=pk).order_by('-fecha_pub')
             #Después de guardar los datos debe quedar en blanco el formulario y mostrar la misma página
             form=formularioposteos()
-            return render(request,'appusc/lista.html',{'lista_post':lista_post,'form':form,'usuario_logueado':usuario_logueado})
+            return render(request,'appusc/tgrados_historial_tm.html',{'lista_post':lista_post,'form':form,'usuario_logueado':usuario_logueado})
             #return render(request,'appusc/formularios.html')
     else:
         #cuando se ingresa a la página el formulario debe estar en blanco
@@ -65,9 +55,10 @@ def ultima(request,pk):
         #aqui se realiza el filtro de los comentarios asociados al trabajo de grado que estoy consultando
         #por defecto django asigna un _id al campo foreign de la base de datos
         lista_post=posteos.objects.filter(trabajo_grado_id=pk).order_by('-fecha_pub')
-        return render(request,'appusc/lista.html',{'lista_post':lista_post,'form':form,'usuario_logueado':usuario_logueado})
+        return render(request,'appusc/tgrados_historial_tm.html',{'lista_post':lista_post,'form':form,'usuario_logueado':usuario_logueado})
 
 def cargaarchivos(request):
+    #Vista de Prueba para cargue de archivos
     url_tutoria=posteos.objects.all()
     print(url_tutoria)
     contexto={}
@@ -101,22 +92,22 @@ def nuevatutoria(request):
             return redirect('/tutoriastgs')
     else:
         form=formulariotutorias()
-    return render(request,'appusc/nuevatutoria.html', {'form': form})
+    return render(request,'appusc/ctg_nuevatutoria_tm.html', {'form': form})
 
-def tutoriastgs(request):
+def tragrados(request):
+    #Vista que controla el listado de tutorías asignadas
     tgs=tgrados.objects.all()
-    return render(request,'appusc/tutorias.html',{'tgs':tgs})
+    return render(request,'appusc/tragrados_tm.html',{'tgs':tgs})
 
-def base(request):
-    return render(request,'appusc/base.html')
+
     
-def listaprofes(request):
+def ctg_listaprofes_tm(request):
     profes=profesores.objects.all()
-    return render(request,'appusc/listaprofes.html',{'profes':profes})
+    return render(request,'appusc/ctg_listaprofes_tm.html',{'profes':profes})
 
-def listaestudiantes(request):
+def ctg_listaestudiantes_tm(request):
     estud=estudiantes.objects.all()
-    return render(request,'appusc/listaestudiantes.html',{'estud':estud})
+    return render(request,'appusc/ctg_listaestudiantes_tm.html',{'estud':estud})
 
 
 def dashboard(request):
@@ -128,20 +119,18 @@ def dashboard(request):
         consulta=comentarios.objects.filter(autor=usuario_logeado)
         #print(nombres)
         
-        print(consulta)
+        #print(consulta)
         #print(me)
       
-        return render(request,'appusc/dashboard.html')
+        return render(request,'appusc/pro_dashboard_tm.html')
     return redirect('/')
 
-def dashboardcopy(request):
- 
-    return render(request,'appusc/dashboardcopy.html')
 
 
 def detail(request):
+    #Vista que amarra el botón "Cerrar Sesión"
     do_logout(request)
-    return render(request,'appusc/inicio.html')
+    return render(request,'appusc/app_inicio.html')
 
 def welcome(request):
     # Si estamos identificados devolvemos la portada
@@ -201,9 +190,7 @@ def login(request):
     # Si llegamos al final renderizamos el formulario
     return render(request, "appusc/login.html", {'form': form})
 
-def salida(request):
-    do_logout(request)
-    return render(request,'appusc/vlogout.html')
+
 
 
 

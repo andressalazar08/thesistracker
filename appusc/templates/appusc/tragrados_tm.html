@@ -47,7 +47,7 @@
               <div class="container">
                          
                 
-                <p><b>Estudiante(s) :</b>&nbsp;&nbsp;<button style=" background-color: rgb(0, 255, 179);"><a href="{% url 'ultima' registro.id %}" type="submit">Revisar</a></button>&nbsp;Fecha de asignación: &nbsp; {{ registro.fecha_asignacion }} </p>
+                <p><b>Estudiante(s) :</b>&nbsp;&nbsp;<button style=" background-color: rgb(0, 255, 179);"><a href="{% url 'tgrados_historial_tm' registro.id %}" type="submit">Revisar</a></button>&nbsp;Fecha de asignación: &nbsp; {{ registro.fecha_asignacion }} </p>
 
                 <p>{{ registro.cedula1 }}&nbsp;{{ registro.nombre1 }}&nbsp;{{ registro.apellidos1 }}</p> 
                 {% if registro.cedula2 %}
