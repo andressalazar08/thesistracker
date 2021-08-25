@@ -7,11 +7,11 @@
         <br>
 
         <div class="w3-container">
-            <h5>Listado de Estudiantes</h5>
+            <h5>Students List</h5>
             <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
-                <th>Cédula</th>
-                <th>Nombres</th>
-                <th>Apellidos</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Last Name</th>
                 {% for registro in estud %}
                 <tr>
                     <td>{{ registro.cedula }}</td>

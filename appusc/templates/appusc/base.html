@@ -16,7 +16,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <a class="w3-button w3-blue w3-right" href="/detail">Cerrar sesión</a>
+  <a class="w3-button w3-blue w3-right" href="/detail">Logout</a>
 </div>
 
 <!-- Sidebar/menu -->
@@ -24,20 +24,26 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <div class="w3-container w3-row">
     
     <div class="w3-col s8 w3-bar">
-      <span>Bienvenido, <strong><b>{{request.user.username}}</b></strong></span><br>
+      <span>Welcome, <strong><b>{{request.user.username}}</b></strong></span><br>
     </div>
   </div>
   <hr>
   <div class="w3-container">
-    <h5>Menú</h5>
+    <h5>Menu</h5>
   </div>
   <div class="w3-bar-block">
+
+    <a href="/modelo" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i>  Optimization Model</a><br><br>
+    <a href="/genetic_algorithm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i> Genethic Algorithm RAP</a><br><br>
+
+
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="/ctg_listaprofes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Profesores</a>
-    <a href="/ctg_listaestudiantes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users w3-text-black"></i>  Estudiantes</a>
-    <a href="/tragrados" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  Tutorías</a>
-    <a href="/nuevatutoria" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-tasks fa-fw"></i>  Nueva Tutoría</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+    <a href="/ctg_listaprofes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Teachers</a>
+    <a href="/ctg_listaestudiantes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users w3-text-black"></i>  Estudents</a>
+    <a href="/tragrados" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  Assigned Work</a>
+    <a href="/nuevatutoria" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-tasks fa-fw"></i>  New Final Work</a>
+    
+   
   </div>
 </nav>
 
@@ -65,7 +71,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Pie de página -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
     <!-- Enlace a página princial target= "_blank" abre una nueva pestaña -->
-    <p> <a href="https://www.usc.edu.co" target="_blank">2021 © Universidad Santiago de Cali  |  Transformación & Buen Gobierno</a></p>
+    <p> <a href="https://www.usc.edu.co" target="_blank"></a></p>
   </footer>
 
   <!-- FIN DE CONTENIDO DE PÁGINA -->

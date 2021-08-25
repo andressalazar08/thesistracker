@@ -111,14 +111,14 @@
             </style>
           
 
-            <h2>Historial del Trabajo de Grado</h2>
+            <h2>Final Work History</h2>
             
             <div class="cardcargue">
               <div class="leftcontainercargue">
                 <form method="post" enctype="multipart/form-data">
                   {% csrf_token %}
                   {{ form.as_p }}
-                  <button type="submit">Crear nueva entrada</button>
+                  <button type="submit">Create a new entry</button>
               </form>
                 
               
@@ -161,9 +161,9 @@
                   </div>
                   
                   <span class="w3-opacity w3-medium">{{ x.autor }} &nbsp;{{ x.fecha_pub }}</span>
-                  <p style= "margin:1px 1px"><b>Título : {{ x.titulo }} </b></p>
+                  <p style= "margin:1px 1px"><b>Title : {{ x.titulo }} </b></p>
                   <div class="otrocontainer" >     
-                    <button style=" background-color: rgb(0, 255, 179);">Archivos Adjuntos</button>                                
+                    <button style=" background-color: rgb(0, 255, 179);">Attached Files</button>                                
                   </div>
                   
                 </div>
@@ -192,10 +192,10 @@
                   
                   <div>
                   <p class="w3-opacity" style= "margin:1px 1px;text-align-last:right ;padding-left: 10px;width: 93%;">{{ x.autor }} &nbsp;{{ x.fecha_pub }}</p>
-                  <p style= "margin:1px 1px;text-align-last:right ;width: 93%;"><b>Título : {{ x.titulo }} </b></p>
+                  <p style= "margin:1px 1px;text-align-last:right ;width: 93%;"><b>Title : {{ x.titulo }} </b></p>
                   </div>
                   <div class="otrocontainer" style="text-align-last: right;width: 92%;">   
-                     <button style=" background-color: rgb(0, 255, 179);">Archivos Adjuntos</button>                                               
+                     <button style=" background-color: rgb(0, 255, 179);">Attached Files</button>                                               
                   </div>
                   
                 </div>

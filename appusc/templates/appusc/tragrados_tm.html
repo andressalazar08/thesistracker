@@ -37,17 +37,17 @@
             </style>
           
 
-            <h2>Tutorías Asignadas</h2>
+            <h2>Assigned Tutor</h2>
             {% for registro in tgs %}
             <div class="card">
               <div class="leftcontainer">
-                <p><b>Título : </b>{{ registro.titulo }}</p>
-                <p> Código del trabajo de grado:&emsp;{{ registro.id }}&emsp;&emsp;Modalidad:&emsp;{{ registro.modalidad }}&emsp;&emsp;Estado:&emsp; <b style="color: rgb(4, 0, 255);">{{ registro.estado }}</b></p>
+                <p><b>Title : </b>{{ registro.titulo }}</p>
+                <p> Final Work ID:&emsp;{{ registro.id }}&emsp;&emsp;Type Of Work:&emsp;{{ registro.modalidad }}&emsp;&emsp;Estado:&emsp; <b style="color: rgb(4, 0, 255);">{{ registro.estado }}</b></p>
               </div>
               <div class="container">
                          
                 
-                <p><b>Estudiante(s) :</b>&nbsp;&nbsp;<button style=" background-color: rgb(0, 255, 179);"><a href="{% url 'tgrados_historial_tm' registro.id %}" type="submit">Revisar</a></button>&nbsp;Fecha de asignación: &nbsp; {{ registro.fecha_asignacion }} </p>
+                <p><b>Students :</b>&nbsp;&nbsp;<button style=" background-color: rgb(0, 255, 179);"><a href="{% url 'tgrados_historial_tm' registro.id %}" type="submit">Check</a></button>&nbsp;Assignment Date : &nbsp; {{ registro.fecha_asignacion }} </p>
 
                 <p>{{ registro.cedula1 }}&nbsp;{{ registro.nombre1 }}&nbsp;{{ registro.apellidos1 }}</p> 
                 {% if registro.cedula2 %}

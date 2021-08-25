@@ -33,12 +33,12 @@ input[type=submit]:hover {
 
         </style>
      
-       <p>Formulario para inscripción de nuevas tutorías</p>
+       <p>Register a new Final Work</p>
 
        <form method="POST" class="post-form">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Inscribir Nueva Tutoría</button>
+        <button type="submit" class="save btn btn-default">Submit</button>
       </form>
       
      {% endblock %}

@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<title>Dashboard Bienvenida</title>
+<title>Welcome to RAP solution</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -16,7 +16,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
 
 <!-- Top container -->
 <div class="w3-bar w3-top w3-black w3-large" style="z-index:4">
-  <a class="w3-button w3-blue w3-right" href="/detail">Cerrar sesión</a>
+  <a class="w3-button w3-blue w3-right" href="/detail">Logout</a>
 </div>
 
 <!-- Sidebar/menu -->
@@ -29,15 +29,21 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   </div>
   <hr>
   <div class="w3-container">
-    <h5>Menú</h5>
+    <h5>Menu</h5>
   </div>
   <div class="w3-bar-block">
+  
+    <a href="/modelo" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i>  Optimization Model</a><br><br>
+    <a href="/genetic_algorithm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i> Genethic Algorithm RAP</a><br><br>
+
+
     <a href="#" class="w3-bar-item w3-button w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black" onclick="w3_close()" title="close menu"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-    <a href="/ctg_listaprofes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Profesores</a>
-    <a href="/ctg_listaestudiantes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users w3-text-black"></i>  Estudiantes</a>
-    <a href="/tragrados" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-tasks fa-fw"></i>  Tutorías</a>
-    <a href="/nuevatutoria" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-bell fa-fw"></i>  Nueva Tutoría</a>
-    <a href="#" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-cog fa-fw"></i>  Settings</a><br><br>
+    <a href="/ctg_listaprofes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users fa-fw"></i>  Teachers</a>
+    <a href="/ctg_listaestudiantes_tm" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-users w3-text-black"></i>  Estudents</a>
+    <a href="/tragrados" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-eye fa-fw"></i>  Assigned Work</a>
+    <a href="/nuevatutoria" class="w3-bar-item w3-button w3-padding w3-blue"><i class="fa fa-tasks fa-fw"></i>  New Final Work</a>
+    
+  
   </div>
 </nav>
 
@@ -61,7 +67,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <h3>52</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Mensajes</h4>
+        <h4>Mesagges</h4>
       </div>
     </div>
     <div class="w3-quarter">
@@ -71,7 +77,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <h3>99</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Vistas</h4>
+        <h4>Views</h4>
       </div>
     </div>
     <div class="w3-quarter">
@@ -81,7 +87,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <h3>23</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Compartidos</h4>
+        <h4>Shared</h4>
       </div>
     </div>
     <div class="w3-quarter">
@@ -91,7 +97,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
           <h3>50</h3>
         </div>
         <div class="w3-clear"></div>
-        <h4>Usuarios</h4>
+        <h4>Users</h4>
       </div>
     </div>
   </div>
@@ -100,41 +106,41 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
     <div class="w3-row-padding" style="margin:0 -16px">
      
       <div class="w3-twothird">
-        <h5>Gestión de Uso</h5>
+        <h5>User Management</h5>
         <table class="w3-table w3-striped w3-white">
           <tr>
             <td><i class="fa fa-user w3-text-blue w3-large"></i></td>
-            <td>Último Usuario conectado</td>
+            <td>Last User Loged in</td>
             <td><i>10 mins</i></td>
           </tr>
           <tr>
             <td><i class="fa fa-bell w3-text-red w3-large"></i></td>
-            <td>Cantidad de Alertas</td>
+            <td>Warnings ammount</td>
             <td><i>15 mins</i></td>
           </tr>
           <tr>
             <td><i class="fa fa-users w3-text-yellow w3-large"></i></td>
-            <td>Usuarios activos</td>
+            <td>Active Users</td>
             <td><i>17 mins</i></td>
           </tr>
           <tr>
             <td><i class="fa fa-comment w3-text-red w3-large"></i></td>
-            <td>Nuevos Comentarios</td>
+            <td>New Comments</td>
             <td><i>25 mins</i></td>
           </tr>
           <tr>
             <td><i class="fa fa-bookmark w3-text-blue w3-large"></i></td>
-            <td>Revisiones de Avances</td>
+            <td>Progess Advance</td>
             <td><i>28 mins</i></td>
           </tr>
           <tr>
             <td><i class="fa fa-laptop w3-text-red w3-large"></i></td>
-            <td>Carga de Archivos</td>
+            <td>files Upload</td>
             <td><i>35 mins</i></td>
           </tr>
           <tr>
             <td><i class="fa fa-share-alt w3-text-green w3-large"></i></td>
-            <td>Elementos compartidos</td>
+            <td>Shared Elements</td>
             <td><i>39 mins</i></td>
           </tr>
         </table>
@@ -145,47 +151,47 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <hr>
 
   <div class="w3-container">
-    <h5>Avance de los Profesores</h5>
+    <h5>Teacher Progress</h5>
     <table class="w3-table w3-striped w3-bordered w3-border w3-hoverable w3-white">
       <tr>
-        <td>Miguel Vargas</td>
+        <td>Miguel Leo</td>
         <td>65%</td>
       </tr>
       <tr>
-        <td>Jhon Masso</td>
+        <td>Jhon Doe</td>
         <td>15.7%</td>
       </tr>
       <tr>
-        <td>Andrés Salazar</td>
+        <td>Andrés String</td>
         <td>5.6%</td>
       </tr>
       <tr>
-        <td>Jorge Girón</td>
+        <td>Jorge Double</td>
         <td>2.1%</td>
       </tr>
       <tr>
-        <td>David Guerrero</td>
+        <td>David Float</td>
         <td>1.9%</td>
       </tr>
       <tr>
-        <td>Mónica Cortéz</td>
+        <td>Monica Doe</td>
         <td>53.5%</td>
       </tr>
     </table><br>
-    <button class="w3-button w3-dark-grey">Revisar Todos los Profesores  <i class="fa fa-arrow-right"></i></button>
+    <button class="w3-button w3-dark-grey">Check all the teachers  <i class="fa fa-arrow-right"></i></button>
   </div>
   <hr>
   <hr>
 
   <div class="w3-container">
-    <h5>Comentarios Recientes</h5>
+    <h5>Recent Coments</h5>
     <div class="w3-row">
       <div class="w3-col m2 text-center">
         <img class="w3-circle"src="{% static 'images/jhonmasso.jpg' %}" style="width:96px;height:96px">
         <!--<img class="w3-circle" src="/images/jhonmasso.jpg" style="width:96px;height:96px">-->
       </div>
       <div class="w3-col m10 w3-container">
-        <h4>John Masso <span class="w3-opacity w3-medium">Feb 29, 2021, 9:12 PM</span></h4>
+        <h4>John Doe <span class="w3-opacity w3-medium">Feb 29, 2021, 9:12 PM</span></h4>
         <p>Sigue así buen trabajo</p><br>
       </div>
     </div>
@@ -196,7 +202,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
         <!--<img class="w3-circle" src="/w3images/avatar1.png" style="width:96px;height:96px">-->
       </div>
       <div class="w3-col m10 w3-container">
-        <h4>Julián Guespú <span class="w3-opacity w3-medium">Mar 04, 2021, 10:15 PM</span></h4>
+        <h4>Julian Got <span class="w3-opacity w3-medium">Mar 04, 2021, 10:15 PM</span></h4>
         <p>Debes corregir la citación, revisa por favor.</p><br>
       </div>
     </div>
@@ -207,7 +213,7 @@ html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}
   <!-- Pie de página -->
   <footer class="w3-container w3-padding-16 w3-light-grey">
     <!-- Enlace a página princial target= "_blank" abre una nueva pestaña -->
-    <p> <a href="https://www.usc.edu.co" target="_blank">2021 © Universidad Santiago de Cali  |  Transformación & Buen Gobierno</a></p>
+    
   </footer>
 
   <!-- End page content -->

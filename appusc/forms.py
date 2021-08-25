@@ -7,24 +7,24 @@ class formulariotutorias(forms.ModelForm):
         model=tgrados
         fields=('titulo','modalidad','cedula1','nombre1','apellidos1','programa1','cedula2','nombre2','apellidos2','programa2','cedula3','nombre3','apellidos3','programa3')
         #Se introducen etiquetas para que el usuario vea un formulario mejor presentado
-        labels={'titulo':'Título del Trabajo de Grado',
+        labels={'titulo':'Final Work Title',
 
-        'cedula1':'Cédula primer estudiante',
-        'nombre1':'Nombres primer estudiante',
-        'apellidos1':'Apellidos primer estudiante',
-        'programa1':'Plan de estudios primer estudiante',
-
-        
-        'cedula2':'Cédula segundo estudiante',
-        'nombre2':'Nombres segundo estudiante',
-        'apellidos2':'Apellidos segundo estudiante',
-        'programa2':'Plan de estudios segundo estudiante',
+        'cedula1':'ID First Student',
+        'nombre1':'First Student Name',
+        'apellidos1':'First Student Last Name',
+        'programa1':'Study Plan',
 
         
-        'cedula3':'Cédula tercer estudiante',
-        'nombre3':'Nombres tercer estudiante',
-        'apellidos3':'Apellidos tercer estudiante',
-        'programa3':'Plan de estudios tercer estudiante',
+        'cedula2':'ID Second Student',
+        'nombre2':'Second Student Name',
+        'apellidos2':'Second Student Last Name',
+        'programa2':'Study Plan',
+
+        
+        'cedula3':'ID Third Student',
+        'nombre3':'First Student Name',
+        'apellidos3':'First Student Last Name',
+        'programa3':'Study Plan',
         
         
         }
@@ -38,9 +38,9 @@ class formularioposteos(forms.ModelForm):
         fields= ('titulo','texto','archivo')
         exclude=('fecha_pub','trabajo_grado','autor')
         labels={
-            'titulo':'Titulo',
-            'texto': 'Ingrese un comentario',
-            'archivo': 'Archivo a cargar',
+            'titulo':'Title',
+            'texto': 'Enter a Description',
+            'archivo': 'Files to load',
         }
 
 

@@ -1,0 +1,92 @@
+{% extends 'appusc/base.html' %}
+
+    {% block content %}
+        
+        <br>
+        
+        <br>
+     
+           <style>
+              
+              th {
+                background-color: #e7be4c86;
+                text-align:center;
+              } 
+              
+              td {
+              border: 1px solid black;
+              text-align:center;
+              
+              }
+              table{
+
+              font-family: Arial, Helvetica, sans-serif;
+              
+              text-align:center;
+              width: 100%;
+              }
+              
+                       
+            
+            
+            .card {
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                margin-left:0px;
+                margin-right: 20px;
+                transition: 0.3s;
+                width: 100%;
+                border-radius: 5px;
+            }
+            
+            .card:hover {
+              box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            }
+            
+            .container {
+                padding: 2px 16px;
+            }
+            .leftcontainer {
+                padding: 2px 16px;
+                box-shadow: 0 2px 2px 0 rgba(7, 241, 132, 0.712);
+                margin-left:0px;
+                margin-right: 0px;
+            }
+            img {
+                border-radius: 5px 5px 0 0;
+                }
+            .tab1{padding-left: 4em;}
+        
+            </style>
+
+            <h2>Results with the use of Genetic Algorithm</h2>
+            
+            <br>
+            <p> Number of Generations:  {{ tipo_resultado }}</p>
+
+            <p> Assignment Result for the RAP Problem with GA:  </p>
+            
+            <!----<table border="1px">
+
+              <tr>
+                {% for data in prueba_tabla %}
+                      <th> {{ data }} </th>
+                {% endfor %}
+
+              
+                {% for _, record in prueba_tabla.iterrows %}
+                  <tr> 
+                      
+                          <td> {{ value }} </td>
+                      
+                  
+                  </tr>
+                {% endfor %}
+              </tr>
+
+            </table>--->
+            
+           <!---    --> 
+           <div> <table id="resmodelo">{{ prueba_tabla|safe }}</table> </div>
+           <p>Ga Performance Measure: {{ resultado_ga_fo }} </p>
+      
+     {% endblock %}

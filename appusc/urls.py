@@ -15,6 +15,8 @@ urlpatterns=[
     path('ctg_listaprofes_tm/',views.ctg_listaprofes_tm),
     path('ctg_listaestudiantes_tm/',views.ctg_listaestudiantes_tm),
     path('tragrados/',views.tragrados),
+    path('modelo/',views.modelo),
+    path('genetic_algorithm/',views.ga),
     path('nuevatutoria/',views.nuevatutoria),
     path('cargaarchivos/',views.cargaarchivos),
     path('tgrados_historial_tm/<int:pk>',views.tgrados_historial_tm,name='tgrados_historial_tm'),

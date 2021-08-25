@@ -15,13 +15,14 @@ class estudiantes(models.Model):
     apellidos=models.CharField(max_length=400)
 
 
-modalidades=(('Monografía Diplomado','Monografía Diplomado'),('Investigación Caso de Estudio','Investigación Caso de Estudio'),('Emprendimiento Empresarial','Emprendimiento Empresarial'))
-estados=(('En desarrollo','En desarrollo'),('Terminado','Terminado'))
+modalidades=(('Diploma Course','Diploma Course'),('Research Case','Research Case'),('Entrepeneuership work','Entrepeneuership work'))
+estados=(('In Progress','In Progress'),('Finished','Finished'))
 
 class tgrados(models.Model):
+    #modelo que se usa en ctg_nuevatutoria
     titulo=models.CharField(max_length=400)
-    estado=models.CharField(max_length=100,choices=estados,default='En desarrollo')
-    modalidad=models.CharField(max_length=100,choices=modalidades,default='Investigación Caso de Estudio')
+    Status=models.CharField(max_length=100,choices=estados,default='In Progress')
+    modalidad=models.CharField(max_length=100,choices=modalidades,default='Study Case Research')
     cedula1=models.IntegerField()
     nombre1=models.CharField(max_length=400)
     apellidos1=models.CharField(max_length=400)
